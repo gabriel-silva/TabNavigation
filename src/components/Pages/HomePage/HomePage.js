@@ -20,7 +20,7 @@ export default class HomePage extends Component {
                 <Content padder>
                     <Button full rounded primary
                             style={{marginTop: 10}}
-                            onPress={() => this.props.navigation.navigate("ProductDetail")}>
+                            onPress={() => this.props.navigation.navigate("ProductDetailPage")}>
                         <Text>Produto</Text>
                     </Button>
                 </Content>

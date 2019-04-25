@@ -24,7 +24,7 @@ export default class TabView extends Component {
 
                     <Button
                         transparent
-                        onPress={() => Navigation.navigate("RegisterVerifyCpfCnpj", {})}>
+                        onPress={() => Navigation.navigate("RegisterVerifyCpfCnpjPage", {})}>
                         <Icon style={[Styles.icon, {color: state.index === 1 ? "blue" : "gray"}]} name="person-add"/>
                         <Text style={[Styles.text, {color: state.index === 1 ? "blue" : "gray"}]}>Cadastrar Cliente</Text>
                     </Button>

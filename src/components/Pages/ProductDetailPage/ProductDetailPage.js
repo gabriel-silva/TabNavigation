@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Text} from "react-native";
 import {Body, Container, Button, Content, Header, Title, Left, Icon, Right} from "native-base";
 
-export default class HomePage extends Component {
+export default class ProductDetailPage extends Component {
 
     static navigationOptions = ({navigation}) => ({
         header: (
@@ -28,7 +28,7 @@ export default class HomePage extends Component {
                 <Content padder>
                     <Button full rounded primary
                             style={{ marginTop: 10 }}
-                            onPress={() => this.props.navigation.navigate("RegisterVerifyCpfCnpj")}>
+                            onPress={() => this.props.navigation.navigate("RegisterVerifyCpfCnpjPage")}>
                         <Text>Cadastrar Usuário</Text>
                     </Button>
                 </Content>

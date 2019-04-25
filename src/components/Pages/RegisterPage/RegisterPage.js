@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {View, Text} from "react-native";
-import {Header, Title, Body, Left, Right, Icon, Button} from "native-base";
+import {Header, Title, Body, Left, Right, Icon, Button, Container, Content} from "native-base";
 
 export default class RegisterPage extends Component {
 
@@ -27,9 +27,15 @@ export default class RegisterPage extends Component {
 
     render() {
         return (
-            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                <Text>Cadastrar Cliente</Text>
-            </View>
+            <Container>
+                <Content padder>
+                    <Button full rounded primary
+                            style={{ marginTop: 10 }}
+                            onPress={() => this.props.navigation.navigate("RegisterAddressPage")}>
+                        <Text>Ver Endereços</Text>
+                    </Button>
+                </Content>
+            </Container>
         );
     }
 }

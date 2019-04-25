@@ -1,18 +1,18 @@
 import {createStackNavigator} from "react-navigation";
 
-import HomePage from "./HomePage";
-import ProductDetailPage from "../ProductDetailPage";
+import RegisterPage from "./RegisterPage";
+import RegisterAddressPage from "../RegisterAddressPage";
 
 export default createStackNavigator(
     {
-        HomePage: {screen: HomePage},
-        ProductDetailPage: {
-            screen: ProductDetailPage,
+        RegisterPage: {screen: RegisterPage},
+        RegisterAddressPage: {
+            screen: RegisterAddressPage,
             navigationOptions: {
                 header: null
             }
         },
-        initialRouteName: "HomePage",
+        initialRouteName: "RegisterPage",
     },
     {
         defaultNavigationOptions: {

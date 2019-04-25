@@ -8,7 +8,7 @@ import TabView from "../components/TabView/TabView";
 
 /* paginas */
 import HomePage from "../components/Pages/HomePage";
-import RegisterVerifyCpfCnpj from "../components/Pages/RegisterVerifyCpfCnpj";
+import RegisterVerifyCpfCnpjPage from "../components/Pages/RegisterVerifyCpfCnpjPage";
 
 const TabNavigator = createBottomTabNavigator(
     {
@@ -23,12 +23,15 @@ const TabNavigator = createBottomTabNavigator(
 const StackNavigator = createStackNavigator(
     {
         HomePage: {screen: TabNavigator},
-        RegisterVerifyCpfCnpj: {screen: RegisterVerifyCpfCnpj}
+        RegisterVerifyCpfCnpjPage: {screen: RegisterVerifyCpfCnpjPage}
     },
     {
         initialRouteName: "HomePage",
-        headerMode: "none"
-    }
+        headerMode: "none",
+        defaultNavigationOptions: {
+            gesturesEnabled: false
+        }
+    },
 );
 
 /**
@@ -36,7 +39,7 @@ const StackNavigator = createStackNavigator(
  * @param navigation
  * @returns {{tabBarVisible: boolean}}
  */
-HomePage.navigationOptions = ({ navigation }) => {
+HomePage.navigationOptions = ({navigation}) => {
     let tabBarVisible = true;
     if (navigation.state.index > 0) {
         tabBarVisible = false;
