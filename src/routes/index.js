@@ -7,6 +7,7 @@ import {Navigation} from "../helpers";
 import TabView from "../components/TabView/TabView";
 
 /* paginas */
+import LoginPage from "../components/Pages/LoginPage/LoginPage";
 import HomePage from "../components/Pages/HomePage";
 import RegisterVerifyCpfCnpjPage from "../components/Pages/RegisterVerifyCpfCnpjPage";
 
@@ -18,20 +19,6 @@ const TabNavigator = createBottomTabNavigator(
         initialRouteName: "HomePage",
         tabBarComponent: props => <TabView {...props} />
     }
-);
-
-const StackNavigator = createStackNavigator(
-    {
-        HomePage: {screen: TabNavigator},
-        RegisterVerifyCpfCnpjPage: {screen: RegisterVerifyCpfCnpjPage}
-    },
-    {
-        initialRouteName: "HomePage",
-        headerMode: "none",
-        defaultNavigationOptions: {
-            gesturesEnabled: false
-        }
-    },
 );
 
 /**
@@ -49,6 +36,34 @@ HomePage.navigationOptions = ({navigation}) => {
         tabBarVisible,
     };
 };
+
+const Home = createStackNavigator(
+    {
+        HomePage: {screen: TabNavigator},
+        RegisterVerifyCpfCnpjPage: {screen: RegisterVerifyCpfCnpjPage}
+    },
+    {
+        initialRouteName: "HomePage",
+        headerMode: "none",
+        defaultNavigationOptions: {
+            gesturesEnabled: false
+        }
+    },
+);
+
+const StackNavigator = createStackNavigator(
+    {
+        LoginPage: {screen: LoginPage},
+        HomePage: {screen: Home},
+    },
+    {
+        initialRouteName: "LoginPage",
+        headerMode: "none",
+        defaultNavigationOptions: {
+            gesturesEnabled: false
+        }
+    },
+);
 
 const AppContainer = createAppContainer(StackNavigator);
 
